@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace JRMobileAppExperiments
 {
-	public class ResultTab : Android.Support.V4.App.Fragment
+	public class ResultTab : BaseFragment
 	{
 		public override View OnCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 		{

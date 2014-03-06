@@ -56,6 +56,7 @@
     <Compile Include="RecentSearchesTab.cs" />
     <Compile Include="HomeTab.cs" />
     <Compile Include="ResultTab.cs" />
+    <Compile Include="BaseFragment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

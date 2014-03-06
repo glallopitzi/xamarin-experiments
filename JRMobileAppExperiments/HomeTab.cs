@@ -11,7 +11,7 @@ using Android.Widget;
 
 namespace JRMobileAppExperiments
 {
-	public class HomeTab : Android.Support.V4.App.Fragment
+	public class HomeTab : BaseFragment
 	{
 		public override View OnCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 		{

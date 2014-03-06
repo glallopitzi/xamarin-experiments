@@ -11,7 +11,7 @@ using Android.Widget;
 
 namespace JRMobileAppExperiments
 {
-	public class RecentSearchesTab : Android.Support.V4.App.Fragment
+	public class RecentSearchesTab : BaseFragment
 	{
 		public override View OnCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 		{
