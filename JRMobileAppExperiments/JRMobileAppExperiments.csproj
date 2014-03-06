@@ -55,6 +55,7 @@
     <Compile Include="SearchTab.cs" />
     <Compile Include="RecentSearchesTab.cs" />
     <Compile Include="HomeTab.cs" />
+    <Compile Include="ResultTab.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -69,6 +70,7 @@
     <AndroidResource Include="Resources\layout\Home.axml" />
     <AndroidResource Include="Resources\layout\Search.axml" />
     <AndroidResource Include="Resources\layout\RecentSearches.axml" />
+    <AndroidResource Include="Resources\layout\Result.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
