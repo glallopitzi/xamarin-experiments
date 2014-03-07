@@ -20,7 +20,9 @@ package JRMobileAppExperiments.admob;
 
 import android.view.View;
 import com.google.ads.*;
-//import com.jobrapido.*;
+import com.google.ads.searchads.SearchAdRequest;
+import android.content.Context;
+import android.widget.LinearLayout;
 
 public class AdMobHelper {
  	
@@ -29,8 +31,6 @@ public class AdMobHelper {
 	public static void logMsg(String msg) {
 		System.out.println(LOG_KEY + msg);
 	}
-
-	private AdMobHelper() { logMsg("AdMobHelper"); }
 
 	//this method will refresh the ad, you can add more to the AdRequest if you want
 	public static void loadAd(View view)
@@ -48,26 +48,46 @@ public class AdMobHelper {
 		}
 	}
 
-	/*
-	 * Commented because not working yet
+	
 	public static void addSearchTermToAdMobRequest(View view, String what, String where){
 		logMsg("addSearchTermToAdMobRequest, view: " + view.toString() + ", what: " + what + ", where: " + where);
-		String query = what + " " + where;
+		String query = what + "+" + where;
+		
 		// Initiate a generic request.
 		try{
-			com.google.android.gms.ads.search.SearchAdRequest adRequest = new com.google.android.gms.ads.search.SearchAdRequest.Builder()
-				.setQuery(query)
-				.build();
+			SearchAdRequest adRequest = new SearchAdRequest();
+			adRequest.setQuery(query);
 
 			logMsg("loadAd|adRequest.toString()|" + adRequest.toString());
 			((AdView)view).loadAd(adRequest);
+		
 			logMsg ("received view: " + view.toString());
 		} catch(Exception ex){
 			logMsg(ex.getMessage());
 		}
 	}
-	*/
+	
 
+	/*public static void makeRequestForSearch(Context context, LinearLayout layout, String what, String where){
+		logMsg("makeRequestForSearch, context: " + context.toString() + ", layout: " + layout + ", what: " + what + ", where: " + where);
+		String query = what + "+" + where;
+		
+		// Initiate a generic request.
+		try{
+			AdView adView = new AdView(context, AdSize.BANNER, "ca-mb-app-pub-3395770861839852/5702551918");
+
+			SearchAdRequest adRequest = new SearchAdRequest();
+			adRequest.setQuery(query);
+
+			logMsg("loadAd|adRequest.toString()|" + adRequest.toString());
+			adView.loadAd(adRequest);
+			layout.add(adView);
+
+			logMsg ("received adView: " + adView.toString());
+		} catch(Exception ex){
+			logMsg(ex.getMessage());
+		}
+	}*/
 
 	//destroys the add, should be called in the override of the destory in the activity.
 	public static void destroy(View view)

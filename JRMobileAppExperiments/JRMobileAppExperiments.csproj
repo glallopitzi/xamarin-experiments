@@ -61,6 +61,7 @@
     <Compile Include="ResultTab.cs" />
     <Compile Include="BaseFragment.cs" />
     <Compile Include="GcmService.cs" />
+    <Compile Include="Helpers\AdMobHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -282,6 +283,7 @@
     <Folder Include="Controls\" />
     <Folder Include="Jars\" />
     <Folder Include="JarWrappers\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="GCMClient">

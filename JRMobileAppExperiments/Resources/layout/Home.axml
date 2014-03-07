@@ -11,19 +11,20 @@
         android:text="Design Top Rated Screen"
         android:textSize="20dp"
         android:layout_centerInParent="true" />
-            <LinearLayout
+    <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="64dp"
         android:gravity="center">
-        
-    <!-- Google AdMob       -->
+    
+        <!-- Google AdMob       -->
         <com.google.ads.AdView xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+            android:id="@+id/adMobView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             ads:adUnitId="ca-mb-app-pub-3395770861839852/5702551918"
             ads:adSize="BANNER"
             ads:testDevices="TEST_EMULATOR, TEST_DEVICE_ID"
-            ads:loadAdOnCreate="true" />
+            />
     </LinearLayout>
 </RelativeLayout>
