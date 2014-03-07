@@ -7,6 +7,7 @@ using Android.Widget;
 using Android.OS;
 using Android.Support.V4.View;
 using Android.Support.V4.App;
+using Gcm.Client;
 
 namespace JRMobileAppExperiments
 {
@@ -25,6 +26,23 @@ namespace JRMobileAppExperiments
 		{
 			base.OnCreate (bundle);
 			SetContentView (Resource.Layout.TabMain);
+
+
+
+
+			//Check to ensure everything's setup right
+			GcmClient.CheckDevice(this);
+			GcmClient.CheckManifest(this);
+
+
+			//Get the stored latest registration id
+			var registrationId = GcmClient.GetRegistrationId(this);
+			if (string.IsNullOrEmpty (registrationId)) {
+				//Call to register
+				GcmClient.Register(this, GcmBroadcastReceiver.SENDER_IDS);
+			}
+
+
 
 			_viewPager = FindViewById<ViewPager> (Resource.Id.pager);
 			_actionBar = ActionBar;
@@ -45,7 +63,11 @@ namespace JRMobileAppExperiments
 		}
 
 
+		protected override void OnResume ()
+		{
+			base.OnResume ();
 
+		}
 
 
 		public void OnTabReselected (ActionBar.Tab tab, Android.App.FragmentTransaction ft)

@@ -46,6 +46,9 @@
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
     <Reference Include="Mono.Android.Support.v4" />
+    <Reference Include="GCM.Client">
+      <HintPath>..\Components\GCMClient-1.0\lib\android\GCM.Client.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -57,6 +60,7 @@
     <Compile Include="HomeTab.cs" />
     <Compile Include="ResultTab.cs" />
     <Compile Include="BaseFragment.cs" />
+    <Compile Include="GcmService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -76,5 +80,11 @@
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Controls\" />
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="GCMClient">
+      <Version>1.0</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
   </ItemGroup>
 </Project>

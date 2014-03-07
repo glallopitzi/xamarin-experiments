@@ -14,13 +14,27 @@ namespace JRMobileAppExperiments
 	class SearchTab : BaseFragment
 	{
 		public Context context;
+		public Button searchButton;
+
+		public override void OnCreate (Bundle savedInstanceState)
+		{
+			base.OnCreate (savedInstanceState);
+			logMsg ("OnCreate");
+		}
+
+
 
 		public override View OnCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 		{
 			context = inflater.Context;
-			logMsg ("context: " + context.ToString());
-			var view = inflater.Inflate (Resource.Layout.Search, container, false);
+			logMsg ("OnCreateView, context: " + context.ToString());
 
+			var view = inflater.Inflate (Resource.Layout.Search, container, false);
+			searchButton = view.FindViewById<Button> (Resource.Id.searchButton);
+
+			searchButton.Click += (object sender, EventArgs e) => {
+
+			};
 
 			return view;
 		}
