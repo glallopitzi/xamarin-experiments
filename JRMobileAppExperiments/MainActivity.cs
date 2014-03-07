@@ -8,6 +8,7 @@ using Android.OS;
 using Android.Support.V4.View;
 using Android.Support.V4.App;
 using Gcm.Client;
+using System.Collections.Generic;
 
 namespace JRMobileAppExperiments
 {
@@ -23,6 +24,10 @@ namespace JRMobileAppExperiments
 		private ActionBar _actionBar;
 
 		private string[] titles = { "Search", "Recent searches", "Third" };
+
+
+		private string currentSelectedTabTag = "";
+		private Dictionary<string, List<Android.Support.V4.App.Fragment>> fragmentsStack = new Dictionary<string, List<Android.Support.V4.App.Fragment>> ();
 
 		protected override void OnCreate (Bundle bundle)
 		{
@@ -59,9 +64,7 @@ namespace JRMobileAppExperiments
 				_actionBar.AddTab (_actionBar.NewTab ().SetText (item).SetTabListener (this));
 			}
 
-
-			var simpleOnPageChangeListener = new ViewPager.SimpleOnPageChangeListener ();
-			_viewPager.SetOnPageChangeListener (simpleOnPageChangeListener);
+			_viewPager.SetOnPageChangeListener (new MyPageChangeListener(_actionBar));
 
 		}
 
@@ -69,9 +72,8 @@ namespace JRMobileAppExperiments
 		protected override void OnResume ()
 		{
 			base.OnResume ();
-
 		}
-
+			
 
 		public void OnTabReselected (ActionBar.Tab tab, Android.App.FragmentTransaction ft)
 		{
@@ -86,6 +88,53 @@ namespace JRMobileAppExperiments
 		{
 		}
 
+
+
+		public void showFragment(Android.Support.V4.App.Fragment fragment){
+		}
+
+		public void createStackForTab(string tabTag){
+		}
+
+		public void addFragmentToStack(Android.Support.V4.App.Fragment fragment){
+		}
+
+		public Android.Support.V4.App.Fragment getLastFragment(){
+			return null;
+		}
+
+		public void onBackPressed(){}
+	}
+
+	class MyPageChangeListener : Java.Lang.Object, ViewPager.IOnPageChangeListener {
+
+		ActionBar actionBar;
+
+		public MyPageChangeListener ()
+		{
+		}
+
+		public MyPageChangeListener (IntPtr handle, JniHandleOwnership transfer) : base (handle, transfer)
+		{
+		}
+
+		public MyPageChangeListener (ActionBar actionBar)
+		{
+			this.actionBar = actionBar;
+		}
+
+		public void OnPageScrollStateChanged (int state)
+		{
+		}
+
+		public void OnPageScrolled (int position, float positionOffset, int positionOffsetPixels)
+		{
+		}
+
+		public void OnPageSelected (int position)
+		{
+			actionBar.SetSelectedNavigationItem (position);
+		}
 	}
 }
 
