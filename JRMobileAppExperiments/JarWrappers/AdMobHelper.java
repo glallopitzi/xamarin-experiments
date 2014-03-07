@@ -51,7 +51,16 @@ public class AdMobHelper {
 	
 	public static void addSearchTermToAdMobRequest(View view, String what, String where){
 		logMsg("addSearchTermToAdMobRequest, view: " + view.toString() + ", what: " + what + ", where: " + where);
-		String query = what + "+" + where;
+		
+		String query = "";
+		if (what != "" && where != ""){
+			query = what + "+" + where;
+		} else {
+			if(what != "") query = what;
+			if(where != "") query = where;
+		}
+		
+		logMsg ("query: " + query);
 		
 		// Initiate a generic request.
 		try{

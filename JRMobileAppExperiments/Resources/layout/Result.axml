@@ -8,7 +8,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Design Games Screen"
+        android:text="Result page here!"
         android:textSize="20dp"
         android:layout_centerInParent="true" />
 </RelativeLayout>
