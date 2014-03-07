@@ -16,6 +16,8 @@ namespace JRMobileAppExperiments
 		: FragmentActivity, ActionBar.ITabListener
 	{
 
+		private bool gcmNotificationEnabled = false;
+
 		private ViewPager _viewPager;
 		private TabsPagerAdapter _tabsAdapter;
 		private ActionBar _actionBar;
@@ -28,18 +30,19 @@ namespace JRMobileAppExperiments
 			SetContentView (Resource.Layout.TabMain);
 
 
+			if (gcmNotificationEnabled) 
+			{
+				//Check to ensure everything's setup right
+				GcmClient.CheckDevice(this);
+				GcmClient.CheckManifest(this);
 
 
-			//Check to ensure everything's setup right
-			GcmClient.CheckDevice(this);
-			GcmClient.CheckManifest(this);
-
-
-			//Get the stored latest registration id
-			var registrationId = GcmClient.GetRegistrationId(this);
-			if (string.IsNullOrEmpty (registrationId)) {
-				//Call to register
-				GcmClient.Register(this, GcmBroadcastReceiver.SENDER_IDS);
+				//Get the stored latest registration id
+				var registrationId = GcmClient.GetRegistrationId(this);
+				if (string.IsNullOrEmpty (registrationId)) {
+					//Call to register
+					GcmClient.Register(this, GcmBroadcastReceiver.SENDER_IDS);
+				}
 			}
 
 

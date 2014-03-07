@@ -66,7 +66,6 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
-    <None Include="Jars\GoogleAdMobAdsSdk-6.4.1.jar" />
     <None Include="Jars\GoogleAdMobAdsSdk-6.4.1\META-INF\MANIFEST.MF" />
     <None Include="Jars\GoogleAdMobAdsSdk-6.4.1\com\google\ads\Ad.class" />
     <None Include="Jars\GoogleAdMobAdsSdk-6.4.1\com\google\ads\AdActivity%24StaticMethodWrapper.class" />
@@ -282,11 +281,18 @@
   <ItemGroup>
     <Folder Include="Controls\" />
     <Folder Include="Jars\" />
+    <Folder Include="JarWrappers\" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="GCMClient">
       <Version>1.0</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidJavaSource Include="JarWrappers\AdMobHelper.java" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidJavaLibrary Include="Jars\GoogleAdMobAdsSdk-6.4.1.jar" />
   </ItemGroup>
 </Project>
