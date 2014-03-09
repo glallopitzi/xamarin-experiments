@@ -1,22 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#7f8330">
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Result page here!"
-        android:textSize="20dp"
-        android:layout_centerInParent="true" />
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Open advert item"
-        android:gravity="center"
-        android:id="@+id/searchButton" />
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
@@ -31,4 +18,8 @@
             ads:adSize="BANNER"
             ads:testDevices="TEST_EMULATOR, TEST_DEVICE_ID" />
     </LinearLayout>
-</RelativeLayout>
+    <ListView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/advertListView" />
+</LinearLayout>

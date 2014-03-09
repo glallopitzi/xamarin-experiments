@@ -3,15 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:id="@+id/recentSearchesFragmentContainer">
+    android:id="@+id/recentSearchesContainer">
     <ListView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/advertList" />
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Click me"
-        android:gravity="center"
-        android:id="@+id/searchButton" />
+        android:id="@+id/recentSearchesListView" />
 </LinearLayout>

@@ -13,13 +13,17 @@ namespace JRMobileAppExperiments
 {
 	public class RecentSearchesTab : BaseFragment
 	{
-		public Button searchButton;
-		public ListView advertListView;
+//		public Button searchButton;
+		public ListView recentSearchesListView;
+		RecentSearchesListAdapter adapter;
 
-		public string[] items = { "Apple", "Avocado", "Banana",
-			"Blueberry", "Coconut", "Durian", "Guava", "Kiwifruit",
-			"Jackfruit", "Mango", "Olive", "Pear", "Sugar-apple" };
-
+		public JobSeekerSearches[] jobSeekerSearches = new JobSeekerSearches[] { 
+			new JobSeekerSearches("java", "dublin"),
+			new JobSeekerSearches("", "dublin"),
+			new JobSeekerSearches("java", ""),
+			new JobSeekerSearches("java developer", ""),
+			new JobSeekerSearches("developer", "")
+		};
 
 		public override View OnCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 		{
@@ -27,20 +31,35 @@ namespace JRMobileAppExperiments
 			logMsg ("OnCreateView, context: " + context.ToString());
 
 			var view = inflater.Inflate (Resource.Layout.RecentSearches, container, false);
-			searchButton = view.FindViewById<Button> (Resource.Id.searchButton);
-			searchButton.Click += (object sender, EventArgs e) => {
-				Android.Support.V4.App.FragmentTransaction trans = FragmentManager.BeginTransaction();
-				trans.Replace(Resource.Id.searchFragmentContainer, new AdvertList());
-				trans.SetTransition(1);
-				trans.AddToBackStack(null);
-				trans.Commit();
-			};
 
-			advertListView = view.FindViewById<ListView> (Resource.Id.advertList);
-//			advertListView.Adapter = new ArrayAdapter<string> (context, 
+//			searchButton = view.FindViewById<Button> (Resource.Id.searchButton);
+//			searchButton.Click += (object sender, EventArgs e) => {
+//				Android.Support.V4.App.FragmentTransaction trans = FragmentManager.BeginTransaction();
+//				trans.Replace(Resource.Id.recentSearchesFragmentContainer, new AdvertList());
+//				trans.SetTransition(1);
+//				trans.AddToBackStack(null);
+//				trans.Commit();
+//			};
+
+			recentSearchesListView = view.FindViewById<ListView> (Resource.Id.recentSearchesListView);
+			adapter = new RecentSearchesListAdapter (Activity, jobSeekerSearches);
+			recentSearchesListView.Adapter = adapter;
 
 			return view;
 		}
+
+	}
+
+	public class JobSeekerSearches {
+		public string what { get; set; }
+		public string where { get; set; }
+
+		public JobSeekerSearches (string what, string where)
+		{
+			this.what = what;
+			this.where = where;
+		}
+		
 	}
 }
 
