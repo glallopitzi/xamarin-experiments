@@ -14,6 +14,12 @@ namespace JRMobileAppExperiments
 	public class RecentSearchesTab : BaseFragment
 	{
 		public Button searchButton;
+		public ListView advertListView;
+
+		public string[] items = { "Apple", "Avocado", "Banana",
+			"Blueberry", "Coconut", "Durian", "Guava", "Kiwifruit",
+			"Jackfruit", "Mango", "Olive", "Pear", "Sugar-apple" };
+
 
 		public override View OnCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 		{
@@ -29,6 +35,10 @@ namespace JRMobileAppExperiments
 				trans.AddToBackStack(null);
 				trans.Commit();
 			};
+
+			advertListView = view.FindViewById<ListView> (Resource.Id.advertList);
+//			advertListView.Adapter = new ArrayAdapter<string> (context, 
+
 			return view;
 		}
 	}

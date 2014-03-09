@@ -9,16 +9,16 @@ using Android.Support.V4.View;
 using Android.Support.V4.App;
 using Gcm.Client;
 using System.Collections.Generic;
-using Android.Content.PM;
+//using Android.Content.PM;
 
 namespace JRMobileAppExperiments
 {
 	[Activity (
 		Label = "JRMobileAppExperiments",
-		Theme = "@style/Jobrapido",
-		ConfigurationChanges = Android.Content.PM.ConfigChanges.KeyboardHidden, 
-		WindowSoftInputMode = Android.Views.SoftInput.StateHidden,
-		ScreenOrientation = ScreenOrientation.Portrait,
+//		Theme = "@style/Jobrapido",
+//		ConfigurationChanges = Android.Content.PM.ConfigChanges.KeyboardHidden, 
+//		WindowSoftInputMode = Android.Views.SoftInput.StateHidden,
+//		ScreenOrientation = ScreenOrientation.Portrait,
 		MainLauncher = true
 	)]
 	public class MainActivity 
@@ -33,16 +33,15 @@ namespace JRMobileAppExperiments
 
 		private string[] titles = { "Search", "Recent searches" };
 
-
-		private string currentSelectedTabTag = "";
-		private Dictionary<string, List<Android.Support.V4.App.Fragment>> fragmentsStack = new Dictionary<string, List<Android.Support.V4.App.Fragment>> ();
+//		private string currentSelectedTabTag = "";
+//		private Dictionary<string, List<Android.Support.V4.App.Fragment>> fragmentsStack = new Dictionary<string, List<Android.Support.V4.App.Fragment>> ();
 
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
 			SetContentView (Resource.Layout.TabMain);
 
-			initializeGoogleCloudMessage ();
+			if (gcmNotificationEnabled) initializeGoogleCloudMessage ();
 
 			_viewPager = FindViewById<ViewPager> (Resource.Id.pager);
 			_actionBar = ActionBar;
@@ -104,18 +103,15 @@ namespace JRMobileAppExperiments
 		/// </summary>
 		void initializeGoogleCloudMessage ()
 		{
-			if (gcmNotificationEnabled) 
-			{
-				//Check to ensure everything's setup right
-				GcmClient.CheckDevice(this);
-				GcmClient.CheckManifest(this);
+			//Check to ensure everything's setup right
+			GcmClient.CheckDevice(this);
+			GcmClient.CheckManifest(this);
 
-				//Get the stored latest registration id
-				var registrationId = GcmClient.GetRegistrationId(this);
-				if (string.IsNullOrEmpty (registrationId)) {
-					//Call to register
-					GcmClient.Register(this, GcmBroadcastReceiver.SENDER_IDS);
-				}
+			//Get the stored latest registration id
+			var registrationId = GcmClient.GetRegistrationId(this);
+			if (string.IsNullOrEmpty (registrationId)) {
+				//Call to register
+				GcmClient.Register(this, GcmBroadcastReceiver.SENDER_IDS);
 			}
 		}
 	}
