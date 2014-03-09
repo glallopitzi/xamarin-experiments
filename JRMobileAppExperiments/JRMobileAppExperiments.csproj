@@ -55,13 +55,13 @@
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controls\TabsPagerAdapter.cs" />
-    <Compile Include="SearchTab.cs" />
-    <Compile Include="RecentSearchesTab.cs" />
-    <Compile Include="HomeTab.cs" />
-    <Compile Include="ResultTab.cs" />
-    <Compile Include="BaseFragment.cs" />
-    <Compile Include="GcmService.cs" />
     <Compile Include="Helpers\AdMobHelper.cs" />
+    <Compile Include="Views\BaseFragment.cs" />
+    <Compile Include="Views\RecentSearchesTab.cs" />
+    <Compile Include="Views\SearchTab.cs" />
+    <Compile Include="Helpers\GcmService.cs" />
+    <Compile Include="Views\OpenAdvert.cs" />
+    <Compile Include="Views\AdvertList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -273,10 +273,15 @@
     <AndroidResource Include="Resources\values\Strings.xml" />
     <AndroidResource Include="Resources\drawable\Icon.png" />
     <AndroidResource Include="Resources\layout\TabMain.axml" />
-    <AndroidResource Include="Resources\layout\Home.axml" />
     <AndroidResource Include="Resources\layout\Search.axml" />
     <AndroidResource Include="Resources\layout\RecentSearches.axml" />
-    <AndroidResource Include="Resources\layout\Result.axml" />
+    <AndroidResource Include="Resources\layout\OpenAdvert.axml" />
+    <AndroidResource Include="Resources\layout\AdvertList.axml" />
+    <AndroidResource Include="Resources\values\Themes.xml" />
+    <AndroidResource Include="Resources\values\Dimensions.xml" />
+    <AndroidResource Include="Resources\values\Colors.xml" />
+    <AndroidResource Include="Resources\drawable\custom_search_button.xml" />
+    <AndroidResource Include="Resources\drawable\custom_search.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
@@ -284,6 +289,7 @@
     <Folder Include="Jars\" />
     <Folder Include="JarWrappers\" />
     <Folder Include="Helpers\" />
+    <Folder Include="Views\" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="GCMClient">

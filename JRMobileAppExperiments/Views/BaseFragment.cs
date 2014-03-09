@@ -15,10 +15,20 @@ namespace JRMobileAppExperiments
 		: Android.Support.V4.App.Fragment
 	{
 
+		public Context context{ get; set; }
+
+
 
 		protected void logMsg(string msg)
 		{
 			System.Diagnostics.Debug.WriteLine (this.Class+"|"+msg);
+		}
+
+
+		public override void OnCreate (Bundle savedInstanceState)
+		{
+			base.OnCreate (savedInstanceState);
+			logMsg ("OnCreate");
 		}
 
 		public override void OnViewCreated (View view, Bundle savedInstanceState)

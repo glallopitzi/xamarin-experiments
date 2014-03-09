@@ -11,18 +11,11 @@ using Android.Widget;
 
 namespace JRMobileAppExperiments
 {
-	class SearchTab : BaseFragment
+	public class SearchTab : BaseFragment
 	{
-		public Context context;
 		public Button searchButton;
-
-		public override void OnCreate (Bundle savedInstanceState)
-		{
-			base.OnCreate (savedInstanceState);
-			logMsg ("OnCreate");
-		}
-
-
+		public EditText whatEditText;
+		public EditText whereEditText;
 
 		public override View OnCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 		{
@@ -31,9 +24,15 @@ namespace JRMobileAppExperiments
 
 			var view = inflater.Inflate (Resource.Layout.Search, container, false);
 			searchButton = view.FindViewById<Button> (Resource.Id.searchButton);
+			whatEditText = view.FindViewById<EditText> (Resource.Id.whatEditText);
+			whereEditText = view.FindViewById<EditText> (Resource.Id.whereEditText);
 
 			searchButton.Click += (object sender, EventArgs e) => {
-
+				Android.Support.V4.App.FragmentTransaction trans = FragmentManager.BeginTransaction();
+				trans.Replace(Resource.Id.searchFragmentContainer, new AdvertList());
+				trans.SetTransition(1);
+				trans.AddToBackStack(null);
+				trans.Commit();
 			};
 
 			return view;

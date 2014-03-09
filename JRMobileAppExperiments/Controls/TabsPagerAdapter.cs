@@ -15,29 +15,26 @@ namespace JRMobileAppExperiments
 	class TabsPagerAdapter 
 		: FragmentPagerAdapter
 	{
-		public TabsPagerAdapter (Android.Support.V4.App.FragmentManager fm) : base (fm)
-		{
-		}
-
+		public TabsPagerAdapter (Android.Support.V4.App.FragmentManager fm) : base (fm){}
 
 		public override Android.Support.V4.App.Fragment GetItem (int position)
 		{
+			Console.WriteLine ("GetItem, position; " + position);
+
 			switch (position) {
 
-			case 0:
-				return new HomeTab ();
-			case 1:
-				return new SearchTab ();
-			case 2:
-				return new RecentSearchesTab ();
-			}
+				case 0:
+					return new SearchTab ();
+				case 1:
+					return new RecentSearchesTab ();
+				}
 
 			return null;
 		}
 
 		public override int Count {
 			get {
-				return 3;
+				return 2;
 			}
 		}
 	}

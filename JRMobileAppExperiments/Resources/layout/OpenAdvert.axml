@@ -3,12 +3,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#7f8330">
+    android:background="#fa6a6a">
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Result page here!"
+        android:text="Design Top Rated Screen"
         android:textSize="20dp"
         android:layout_centerInParent="true" />
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/advert_frame_webView" />
 </RelativeLayout>

@@ -12,11 +12,15 @@ using Android.Widget;
 
 namespace JRMobileAppExperiments
 {
-	public class ResultTab : BaseFragment
+	public class AdvertList : BaseFragment
 	{
 		public override View OnCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 		{
-			var view = inflater.Inflate (Resource.Layout.Result, container, false);
+			var view = inflater.Inflate (Resource.Layout.AdvertList, container, false);
+
+			var adMob = view.FindViewById<View> (Resource.Id.adMobView);
+			AdMobHelper.AddSearchTermToAdMobRequest (adMob, "java", "milano");
+
 			return view;
 		}
 	}
