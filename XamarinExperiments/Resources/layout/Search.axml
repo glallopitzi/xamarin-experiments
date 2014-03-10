@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/searchFragmentContainer">
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/whatEditText"
+        android:text="Cosa?"
+        android:layout_margin="@dimen/search_input_padding_bottom"
+        android:imeOptions="actionDone"
+        android:singleLine="true" />
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/whereEditText"
+        android:text="Dove?"
+        android:layout_marginLeft="@dimen/search_input_padding_bottom"
+        android:layout_marginRight="@dimen/search_input_padding_bottom"
+        android:layout_marginBottom="@dimen/search_input_padding_bottom"
+        android:imeOptions="actionDone"
+        android:singleLine="true" />
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Cerca"
+        style="@style/Jobrapido.Search.Button"
+        android:background="@drawable/custom_search_button"
+        android:id="@+id/searchButton" />
+</LinearLayout>
