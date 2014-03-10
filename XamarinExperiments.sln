@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JRMobileAppExperiments", "JRMobileAppExperiments\JRMobileAppExperiments.csproj", "{8468BBFE-5BBB-43F8-971A-9AE6569E5831}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinDroidExperiments", "JRMobileAppExperiments\XamarinDroidExperiments.csproj", "{8468BBFE-5BBB-43F8-971A-9AE6569E5831}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +15,6 @@ Global
 		{8468BBFE-5BBB-43F8-971A-9AE6569E5831}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = JRMobileAppExperiments\JRMobileAppExperiments.csproj
+		StartupItem = JRMobileAppExperiments\XamarinDroidExperiments.csproj
 	EndGlobalSection
 EndGlobal
