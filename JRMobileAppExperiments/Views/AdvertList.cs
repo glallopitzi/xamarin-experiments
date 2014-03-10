@@ -26,6 +26,14 @@ namespace JRMobileAppExperiments
 			adapter = new AdvertListAdapter (Activity, getAdverts());
 			advertsListView.Adapter = adapter;
 
+			advertsListView.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) => {
+				// TODO set on click here
+			};
+
+			advertsListView.ItemLongClick += (object sender, AdapterView.ItemLongClickEventArgs e) => {
+				// TODO set on long click here
+			};
+
 			var adMob = view.FindViewById<View> (Resource.Id.adMobView);
 			AdMobHelper.AddSearchTermToAdMobRequest (adMob, "java", "milano");
 
