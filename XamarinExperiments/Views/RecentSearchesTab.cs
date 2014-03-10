@@ -45,6 +45,10 @@ namespace XamarinExperiments
 			adapter = new RecentSearchesListAdapter (Activity, jobSeekerSearches);
 			recentSearchesListView.Adapter = adapter;
 
+			recentSearchesListView.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) => {
+				// TODO
+			};
+
 			return view;
 		}
 

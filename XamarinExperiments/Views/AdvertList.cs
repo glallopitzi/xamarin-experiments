@@ -28,10 +28,12 @@ namespace XamarinExperiments
 
 			advertsListView.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) => {
 				// TODO set on click here
+				Toast.MakeText(context, "Short clicked!", ToastLength.Long);
 			};
 
 			advertsListView.ItemLongClick += (object sender, AdapterView.ItemLongClickEventArgs e) => {
 				// TODO set on long click here
+				Toast.MakeText(context, "Long clicked!", ToastLength.Long);
 			};
 
 			var adMob = view.FindViewById<View> (Resource.Id.adMobView);
