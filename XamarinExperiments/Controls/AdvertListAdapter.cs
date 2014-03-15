@@ -8,6 +8,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Android.Views.Animations;
 
 namespace XamarinExperiments
 {
@@ -45,8 +46,15 @@ namespace XamarinExperiments
 			View view = convertView;
 			if (view == null)
 				view = context.LayoutInflater.Inflate (Resource.Layout.AdvertListItem, parent, false);
+
+			Animation fadeIn = AnimationUtils.LoadAnimation (context, Resource.Animation.fade_in);
+
+			view.StartAnimation (fadeIn);
+
 			view.FindViewById <TextView> (Resource.Id.advertTitle).Text = items [position].title;
+
 			// TODO
+
 			return view;
 		}
 

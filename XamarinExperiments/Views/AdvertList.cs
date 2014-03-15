@@ -44,10 +44,23 @@ namespace XamarinExperiments
 
 
 		private Advert[] getAdverts() {
-			Advert[] adverts = new Advert[3];
+			Advert[] adverts = new Advert[20];
 			adverts [0] = new Advert ("title 1", "url", "location", "company", "website", "date");
 			adverts [1] = new Advert ("title 2", "url", "location", "company", "website", "date");
 			adverts [2] = new Advert ("title 3", "url", "location", "company", "website", "date");
+			adverts [3] = new Advert ("title 3", "url", "location", "company", "website", "date");
+			adverts [4] = new Advert ("title 3", "url", "location", "company", "website", "date");
+			adverts [5] = new Advert ("title 3", "url", "location", "company", "website", "date");
+			adverts [6] = new Advert ("title 3", "url", "location", "company", "website", "date");
+			adverts [7] = new Advert ("title 3", "url", "location", "company", "website", "date");
+			adverts [8] = new Advert ("title 3", "url", "location", "company", "website", "date");
+			adverts [9] = new Advert ("title 3", "url", "location", "company", "website", "date");
+			adverts [10] = new Advert ("title 3", "url", "location", "company", "website", "date");
+			adverts [11] = new Advert ("title 3", "url", "location", "company", "website", "date");
+			adverts [12] = new Advert ("title 3", "url", "location", "company", "website", "date");
+			adverts [13] = new Advert ("title 3", "url", "location", "company", "website", "date");
+			adverts [14] = new Advert ("title 3", "url", "location", "company", "website", "date");
+			adverts [15] = new Advert ("title 3", "url", "location", "company", "website", "date");
 			return adverts;
 		}
 

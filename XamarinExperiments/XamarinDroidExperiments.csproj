@@ -292,6 +292,7 @@
     <AndroidResource Include="Resources\drawable\delete_icon.png" />
     <AndroidResource Include="Resources\drawable\link.png" />
     <AndroidResource Include="Resources\drawable\localization.png" />
+    <AndroidResource Include="Resources\Anim\fade_in.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
@@ -300,6 +301,7 @@
     <Folder Include="JarWrappers\" />
     <Folder Include="Helpers\" />
     <Folder Include="Views\" />
+    <Folder Include="Resources\Anim\" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="GCMClient">
