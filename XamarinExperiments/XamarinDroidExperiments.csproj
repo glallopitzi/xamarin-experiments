@@ -313,4 +313,10 @@
   <ItemGroup>
     <AndroidJavaLibrary Include="Jars\GoogleAdMobAdsSdk-6.4.1.jar" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\XamarinCoreExperiments\XamarinCoreExperiments.csproj">
+      <Project>{8B74BEA5-D23A-48AD-A1E4-75C4C0977C3D}</Project>
+      <Name>XamarinCoreExperiments</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
