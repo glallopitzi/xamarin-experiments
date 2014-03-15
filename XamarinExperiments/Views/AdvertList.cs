@@ -28,12 +28,13 @@ namespace XamarinExperiments
 
 			advertsListView.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) => {
 				// TODO set on click here
-				Toast.MakeText(context, "Short clicked!", ToastLength.Long);
+
+				Toast.MakeText(((AdvertListAdapter)((ListView)sender).Adapter).context, "Short clicked!", ToastLength.Long).Show();
 			};
 
 			advertsListView.ItemLongClick += (object sender, AdapterView.ItemLongClickEventArgs e) => {
 				// TODO set on long click here
-				Toast.MakeText(context, "Long clicked!", ToastLength.Long);
+				Toast.MakeText(((AdvertListAdapter)((ListView)sender).Adapter).context, "Long clicked!", ToastLength.Long).Show();
 			};
 
 			var adMob = view.FindViewById<View> (Resource.Id.adMobView);
@@ -45,22 +46,9 @@ namespace XamarinExperiments
 
 		private Advert[] getAdverts() {
 			Advert[] adverts = new Advert[20];
-			adverts [0] = new Advert ("title 1", "url", "location", "company", "website", "date");
-			adverts [1] = new Advert ("title 2", "url", "location", "company", "website", "date");
-			adverts [2] = new Advert ("title 3", "url", "location", "company", "website", "date");
-			adverts [3] = new Advert ("title 3", "url", "location", "company", "website", "date");
-			adverts [4] = new Advert ("title 3", "url", "location", "company", "website", "date");
-			adverts [5] = new Advert ("title 3", "url", "location", "company", "website", "date");
-			adverts [6] = new Advert ("title 3", "url", "location", "company", "website", "date");
-			adverts [7] = new Advert ("title 3", "url", "location", "company", "website", "date");
-			adverts [8] = new Advert ("title 3", "url", "location", "company", "website", "date");
-			adverts [9] = new Advert ("title 3", "url", "location", "company", "website", "date");
-			adverts [10] = new Advert ("title 3", "url", "location", "company", "website", "date");
-			adverts [11] = new Advert ("title 3", "url", "location", "company", "website", "date");
-			adverts [12] = new Advert ("title 3", "url", "location", "company", "website", "date");
-			adverts [13] = new Advert ("title 3", "url", "location", "company", "website", "date");
-			adverts [14] = new Advert ("title 3", "url", "location", "company", "website", "date");
-			adverts [15] = new Advert ("title 3", "url", "location", "company", "website", "date");
+			for (int i = 0; i < adverts.Length; i++) {
+				adverts [i] = new Advert ("title "+i, "url", "location", "company", "website", "date");
+			}
 			return adverts;
 		}
 

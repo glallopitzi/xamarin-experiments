@@ -15,7 +15,9 @@ namespace XamarinExperiments
 	class TabsPagerAdapter 
 		: FragmentPagerAdapter
 	{
-		public TabsPagerAdapter (Android.Support.V4.App.FragmentManager fm) : base (fm){}
+		Android.Support.V4.App.FragmentManager fm;
+
+		public TabsPagerAdapter (Android.Support.V4.App.FragmentManager fm) : base (fm){ this.fm = fm; }
 
 		public override Android.Support.V4.App.Fragment GetItem (int position)
 		{
@@ -24,13 +26,34 @@ namespace XamarinExperiments
 			switch (position) {
 
 				case 0:
-					return new SearchTab ();
+				return new SearchTab (fm);
 				case 1:
 					return new RecentSearchesTab ();
 				}
 
 			return null;
 		}
+
+		public override long GetItemId (int position)
+		{
+			return base.GetItemId (position);
+		}
+
+		public override bool IsViewFromObject (View view, Java.Lang.Object @object)
+		{
+			return base.IsViewFromObject (view, @object);
+		}
+
+		public override int GetItemPosition (Java.Lang.Object @object)
+		{
+			return base.GetItemPosition (@object);
+		}
+
+		public override void NotifyDataSetChanged ()
+		{
+			base.NotifyDataSetChanged ();
+		}
+			
 
 		public override int Count {
 			get {

@@ -14,7 +14,7 @@ namespace XamarinExperiments
 {
 	public class AdvertListAdapter : BaseAdapter
 	{
-		Activity context;
+		public Activity context;
 		public Advert[] items;
 
 		public AdvertListAdapter (IntPtr javaReference, JniHandleOwnership transfer, Activity context, Advert[] items) : base (javaReference, transfer)
@@ -36,6 +36,7 @@ namespace XamarinExperiments
 		{
 			return null;
 		}
+
 		public override long GetItemId (int position)
 		{
 			return position;
@@ -47,9 +48,13 @@ namespace XamarinExperiments
 			if (view == null)
 				view = context.LayoutInflater.Inflate (Resource.Layout.AdvertListItem, parent, false);
 
-			Animation fadeIn = AnimationUtils.LoadAnimation (context, Resource.Animation.fade_in);
+//			Animation fadeIn = AnimationUtils.LoadAnimation (context, Resource.Animation.fade_in);
+//			Animation slideUp = AnimationUtils.LoadAnimation (context, Resource.Animation.slide_up);
+			Animation flyIn = AnimationUtils.LoadAnimation (context, Resource.Animation.fly_in);
 
-			view.StartAnimation (fadeIn);
+//			view.StartAnimation (fadeIn);
+//			view.StartAnimation (slideUp);
+			view.StartAnimation (flyIn);
 
 			view.FindViewById <TextView> (Resource.Id.advertTitle).Text = items [position].title;
 

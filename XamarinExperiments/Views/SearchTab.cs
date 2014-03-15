@@ -13,9 +13,15 @@ namespace XamarinExperiments
 {
 	public class SearchTab : BaseFragment
 	{
+		Android.Support.V4.App.FragmentManager fm;
+
 		public Button searchButton;
 		public EditText whatEditText;
 		public EditText whereEditText;
+
+		public SearchTab(Android.Support.V4.App.FragmentManager fm) : base() {
+			this.fm = fm;
+		}
 
 		public override View OnCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 		{
@@ -28,7 +34,7 @@ namespace XamarinExperiments
 			whereEditText = view.FindViewById<EditText> (Resource.Id.whereEditText);
 
 			searchButton.Click += (object sender, EventArgs e) => {
-				Android.Support.V4.App.FragmentTransaction trans = FragmentManager.BeginTransaction();
+				Android.Support.V4.App.FragmentTransaction trans = fm.BeginTransaction();
 				trans.Replace(Resource.Id.searchFragmentContainer, new AdvertList());
 				trans.SetTransition(1);
 				trans.AddToBackStack(null);

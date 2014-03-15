@@ -293,6 +293,8 @@
     <AndroidResource Include="Resources\drawable\link.png" />
     <AndroidResource Include="Resources\drawable\localization.png" />
     <AndroidResource Include="Resources\Anim\fade_in.xml" />
+    <AndroidResource Include="Resources\Anim\slide_up.xml" />
+    <AndroidResource Include="Resources\Anim\fly_in.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
