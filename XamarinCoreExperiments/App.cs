@@ -11,7 +11,7 @@ namespace XamarinCoreExperiments
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 				
-            RegisterAppStart<ViewModels.FirstViewModel>();
+            RegisterAppStart<ViewModels.SearchViewModel>();
         }
     }
 }
