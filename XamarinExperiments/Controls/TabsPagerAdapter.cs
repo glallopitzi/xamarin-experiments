@@ -12,26 +12,23 @@ using Android.Support.V4.App;
 
 namespace XamarinExperiments
 {
-	class TabsPagerAdapter 
+	public class TabsPagerAdapter 
 		: FragmentPagerAdapter
 	{
 		Android.Support.V4.App.FragmentManager fm;
+		List<Android.Support.V4.App.Fragment> tabs;
 
-		public TabsPagerAdapter (Android.Support.V4.App.FragmentManager fm) : base (fm){ this.fm = fm; }
+		public TabsPagerAdapter (Android.Support.V4.App.FragmentManager fm) : base (fm) { 
+			this.fm = fm; 
+			tabs = new List<Android.Support.V4.App.Fragment> ();
+//			tabs.Add (new SearchTab (fm, this));
+			tabs.Add (new RecentSearchesTab ());
+		}
 
 		public override Android.Support.V4.App.Fragment GetItem (int position)
 		{
 			Console.WriteLine ("GetItem, position; " + position);
-
-			switch (position) {
-
-				case 0:
-				return new SearchTab (fm);
-				case 1:
-					return new RecentSearchesTab ();
-				}
-
-			return null;
+			return tabs [position];
 		}
 
 		public override long GetItemId (int position)

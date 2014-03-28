@@ -28,13 +28,10 @@ namespace XamarinExperiments
 		private bool gcmNotificationEnabled = false;
 
 		private ViewPager _viewPager;
-		private TabsPagerAdapter _tabsAdapter;
+		private DynamicTabsPagerAdapter _tabsAdapter;
 		private ActionBar _actionBar;
 
 		private string[] titles = { "Search", "Recent searches" };
-
-//		private string currentSelectedTabTag = "";
-//		private Dictionary<string, List<Android.Support.V4.App.Fragment>> fragmentsStack = new Dictionary<string, List<Android.Support.V4.App.Fragment>> ();
 
 		protected override void OnCreate (Bundle bundle)
 		{
@@ -45,7 +42,7 @@ namespace XamarinExperiments
 
 			_viewPager = FindViewById<ViewPager> (Resource.Id.pager);
 			_actionBar = ActionBar;
-			_tabsAdapter = new TabsPagerAdapter (SupportFragmentManager);
+			_tabsAdapter = new DynamicTabsPagerAdapter (SupportFragmentManager);
 
 			_viewPager.Adapter = _tabsAdapter;
 			_actionBar.SetHomeButtonEnabled (false);
@@ -59,11 +56,7 @@ namespace XamarinExperiments
 
 		}
 
-		public override void OnBackPressed ()
-		{
-			base.OnBackPressed ();
-		}
-
+		#region ActionBar.ITabListener
 		public void OnTabReselected (ActionBar.Tab tab, Android.App.FragmentTransaction ft){}
 
 		public void OnTabSelected (ActionBar.Tab tab, Android.App.FragmentTransaction ft)
@@ -72,22 +65,7 @@ namespace XamarinExperiments
 		}
 
 		public void OnTabUnselected (ActionBar.Tab tab, Android.App.FragmentTransaction ft){}
-
-
-
-
-		public void showFragment(Android.Support.V4.App.Fragment fragment){}
-
-		public void createStackForTab(string tabTag){}
-
-		public void addFragmentToStack(Android.Support.V4.App.Fragment fragment){}
-
-		public Android.Support.V4.App.Fragment getLastFragment(){
-			return null;
-		}
-
-		public void onBackPressed(){}
-
+		#endregion
 
 
 
